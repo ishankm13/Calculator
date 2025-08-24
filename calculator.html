@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Base Converter Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Number Base Converter Calculator</h1>
+        
+        <div class="converter-section">
+            <div class="input-section">
+                <label for="inputNumber">Enter Number:</label>
+                <input type="text" id="inputNumber" placeholder="Enter your number here">
+                
+                <label for="fromBase">From Base:</label>
+                <select id="fromBase">
+                    <option value="2">Binary (Base 2)</option>
+                    <option value="8">Octal (Base 8)</option>
+                    <option value="10" selected>Decimal (Base 10)</option>
+                    <option value="16">Hexadecimal (Base 16)</option>
+                </select>
+                
+                <button onclick="convertNumber()">Convert</button>
+                <button onclick="clearAll()">Clear</button>
+            </div>
+            
+            <div class="results-section">
+                <h3>Results:</h3>
+                <div class="result-item">
+                    <label>Binary (Base 2):</label>
+                    <input type="text" id="binaryResult" readonly>
+                    <button onclick="copyToClipboard('binaryResult')">Copy</button>
+                </div>
+                
+                <div class="result-item">
+                    <label>Octal (Base 8):</label>
+                    <input type="text" id="octalResult" readonly>
+                    <button onclick="copyToClipboard('octalResult')">Copy</button>
+                </div>
+                
+                <div class="result-item">
+                    <label>Decimal (Base 10):</label>
+                    <input type="text" id="decimalResult" readonly>
+                    <button onclick="copyToClipboard('decimalResult')">Copy</button>
+                </div>
+                
+                <div class="result-item">
+                    <label>Hexadecimal (Base 16):</label>
+                    <input type="text" id="hexResult" readonly>
+                    <button onclick="copyToClipboard('hexResult')">Copy</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>How to use:</h3>
+            <ul>
+                <li><strong>Binary:</strong> Use only 0 and 1 (e.g., 1010)</li>
+                <li><strong>Octal:</strong> Use digits 0-7 (e.g., 1234)</li>
+                <li><strong>Decimal:</strong> Use digits 0-9 (e.g., 1234)</li>
+                <li><strong>Hexadecimal:</strong> Use 0-9 and A-F (e.g., 1A2B)</li>
+            </ul>
+        </div>
+        
+        <div class="examples-section">
+            <h3>Examples:</h3>
+            <div class="example-buttons">
+                <button onclick="loadExample('1010', '2')">Binary: 1010</button>
+                <button onclick="loadExample('255', '10')">Decimal: 255</button>
+                <button onclick="loadExample('FF', '16')">Hex: FF</button>
+                <button onclick="loadExample('377', '8')">Octal: 377</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="calculator.js"></script>
+</body>
+</html>
